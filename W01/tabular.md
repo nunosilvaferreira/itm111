@@ -19,9 +19,25 @@
 ---
 
 ## 3. Camera Roll Log
-| Photo # | Location       | Type          | Connected To |
-|---------|----------------|---------------|--------------|
-| 1       | Home           | Selfie        | -            |
-| 2       | Home           | Selfie        | Photo 1      |
-| 3       | Outdoors       | Landscape     | -            |
-| ...     | ...            | ...           | ...          |
+| Photo # | Location       | Type                | Connected Photos |
+|---------|----------------|---------------------|------------------|
+| 1       | Home           | Selfie              | -                |
+| 2       | Home           | Selfie              | 1                |
+| 3       | Home           | Selfie              | 1                |
+| 4       | Outdoors       | Cityscape           | -                |
+| 5       | Outdoors       | Cityscape           | -                |
+| 6       | Outdoors       | Cityscape           | 5                |
+| 7       | Home           | Group/Others        | -                |
+| 8       | Home           | Group/Others        | 7                |
+| 9       | Work           | Documentation       | -                |
+| 10      | Work           | Documentation       | 9                |
+| 11      | Work           | Documentation       | 9                |
+| 12      | Work           | Documentation       | -                |
+| 13      | Work           | Documentation       | -                |
+| 14      | Work           | Documentation       | 13               |
+| 15      | Home           | Group/Others        | -                |
+| 16      | Home           | Group/Others        | 15               |
+| 17      | Outdoors       | Cityscape           | -                |
+| 18      | Outdoors       | Cityscape           | 17               |
+| 19      | Other          | Group/Others        | -                |
+| 20      | Other          | Group/Others        | 19               |
