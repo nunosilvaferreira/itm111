@@ -1,0 +1,42 @@
+ITM 111 - W03 Team Activity: CRUD in Practice
+Team Members: Nuno Ferreira, Junior Tang, Talia Olsen, Sandra Nankya
+Date: 07/16/2025
+
+1. ARTIST GALLERY VIEW
+Purpose: Display all artworks by a specific artist.
+Type: SELECT
+Required Data: Artist name (e.g., "Rembrandt van Rijn").
+Returns: artwork_id, title, year, period, type, location.
+SQL:
+SELECT artwork_id, title, year, period, type, location 
+FROM artwork WHERE artist_id = ?;
+
+2. KEYWORD SEARCH
+Purpose: Find artworks by keywords.
+Type: SELECT
+Required Data: Keyword (e.g., "Baroque").
+Returns: title, artist name, year, period.
+SQL:
+SELECT a.title, ar.name, a.year, a.period 
+FROM artwork a JOIN artist ar ON a.artist_id = ar.artist_id 
+JOIN keybridge kb ON a.artwork_id = kb.artwork_id 
+JOIN keyword k ON kb.keyword_id = k.keyword_id 
+WHERE k.keyword LIKE ?;
+
+3. ADD NEW ARTIST
+Purpose: Insert a new artist into the database.
+Type: INSERT
+Required Data: name, birth_year, death_year, country.
+Returns: No data returned (confirmation only).
+SQL:
+INSERT INTO artist (name, birth_year, death_year, country) 
+VALUES (?, ?, ?, ?);
+
+4. UPDATE ARTWORK LOCATION
+Purpose: Change an artwork's museum location.
+Type: UPDATE
+Required Data: artwork_id, new_location.
+Returns: No data returned (confirmation only).
+SQL:
+UPDATE artwork SET location = ? WHERE artwork_id = ?;
+

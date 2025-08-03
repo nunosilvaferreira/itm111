@@ -1,0 +1,20 @@
+Final Project Idea: "Couple Time" App
+
+Description:
+A web application designed to help couples spend meaningful time together through curated activities, conversation prompts, and shared goals.
+
+APIs:
+1. BoredAPI (https://www.boredapi.com/) - Fetches random activities for two people.
+2. Quotable (https://api.quotable.io) - Provides relationship-themed quotes.
+3. Optional: Open Trivia DB (https://opentdb.com/) for fun quizzes.
+
+Features:
+- Activity generator with filters (time, mood).
+- Relationship quiz to spark conversations.
+- Shared journal (localStorage).
+- Weekly challenges with email reminders (EmailJS).
+
+Why this fits WDD 330:
+- Uses 2+ free APIs (no OpenWeatherMap).
+- Focused frontend project (HTML/CSS/JS).
+- Demonstrates API integration, DOM manipulation, and responsive design.

@@ -1,0 +1,61 @@
+ITM 111 - W03 Team Activity: CRUD in Practice
+Team Members: [Your Names Here]
+Date: [Submission Date]
+
+============================================
+SQL Statements Identified for Art Website System
+============================================
+
+1. ARTIST GALLERY VIEW
+Purpose: Display all artworks by a specific artist for public browsing
+Type: SELECT
+Required Data: Artist ID or name
+Returns: Artwork details for gallery display
+SQL:
+SELECT a.artwork_id, a.title, a.year, a.period, a.type, a.location 
+FROM artwork a
+JOIN artist ar ON a.artist_id = ar.artist_id
+WHERE ar.name = '[artist_name]'
+ORDER BY a.year ASC;
+
+2. KEYWORD SEARCH FUNCTIONALITY
+Purpose: Allow visitors to find artworks by keywords/tags
+Type: SELECT with JOIN
+Required Data: Keyword (e.g., "renaissance", "portrait")
+Returns: Matching artworks with basic artist info
+SQL:
+SELECT a.title, ar.name AS artist, a.year, a.period
+FROM artwork a
+JOIN artist ar ON a.artist_id = ar.artist_id
+JOIN keybridge kb ON a.artwork_id = kb.artwork_id
+JOIN keyword k ON kb.keyword_id = k.keyword_id
+WHERE k.keyword LIKE '%[search_term]%';
+
+3. ARTIST MANAGEMENT (ADD NEW)
+Purpose: Allow admins to add new artists to the database
+Type: INSERT
+Required Data: Name, birth/death years, nationality
+Returns: Confirmation of successful addition
+SQL:
+INSERT INTO artist (name, birth_year, death_year, country)
+VALUES ('Raphael', 1483, 1520, 'Italy');
+
+4. ARTWORK LOCATION UPDATE
+Purpose: Update museum location when artworks are moved
+Type: UPDATE
+Required Data: Artwork ID and new location
+Returns: Number of affected rows
+SQL:
+UPDATE artwork
+SET location = 'Louvre, Paris'
+WHERE artwork_id = 42;
+
+============================================
+Implementation Notes:
+- All queries use parameterized statements to prevent SQL injection
+- Date formats follow YYYY-MM-DD standards
+- Admin functions include confirmation dialogs for DELETE operations
+- Public searches are case-insensitive
+
+Team Discussion Summary:
+We identified these as essential functions after testing the demo site. The keyword search was prioritized as it's core to visitor experience, while artist management supports collection growth. We allocated 15 minutes per query during our 60-minute session.
